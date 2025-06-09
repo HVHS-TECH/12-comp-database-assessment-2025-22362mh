@@ -2,6 +2,8 @@ body {
     font-family: verdana;
     background-color: #ffbcb5;
     color: #383d3b;
+
+    text-align: center;
 }
 
 button {
@@ -11,6 +13,10 @@ button {
     border-color: #383d3b;
 
     font-size: 30px;
+}
+
+.buttons {
+    display: block;
 }
 
 h1 {
