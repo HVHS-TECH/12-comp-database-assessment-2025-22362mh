@@ -1,0 +1,32 @@
+body {
+    font-family: verdana;
+    background-color: #ffbcb5;
+    color: #383d3b;
+}
+
+button {
+    font-family: verdana;
+    background-color: #fbdce2;
+    color: #383d3b;
+    border-color: #383d3b;
+
+    font-size: 30px;
+}
+
+h1 {
+    font-family: verdana;
+    color: #383d3b;
+    background-color: #c83e4d;
+
+    font-size: 50px;
+
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+    
+    padding: 20px;
+
+    border-bottom: solid;
+    border-bottom-color: #95a78d;
+    border-bottom-width: 10px;
+}
