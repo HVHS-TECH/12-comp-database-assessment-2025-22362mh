@@ -206,3 +206,5 @@ function movePlayer(){
 		player.vel.y = 0;
 	}
 }
+
+export {start};
