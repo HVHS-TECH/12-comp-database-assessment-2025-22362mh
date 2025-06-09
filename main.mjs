@@ -1,5 +1,3 @@
-import start from "./GameThatWorks.mjs";
-
-function gameThatWorks(){
-    start();
-}
+import { start } 
+    from './GameThatWorks.mjs';
+    window.start = start;
