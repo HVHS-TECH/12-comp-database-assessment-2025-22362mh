@@ -33,7 +33,7 @@ var gameState = "start";
 
 function setup() {
 	console.log("setup: ");
-	cnv = new Canvas(GAMEWIDTH, GAMEHEIGHT);
+	cnv =  new Canvas(GAMEWIDTH, GAMEHEIGHT);
 
 	player = new Sprite(100, 100, playerSize, playerSize, 'd');
     player.color = 'purple';
