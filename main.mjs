@@ -10,6 +10,10 @@ import { fb_writeRec }
     from './form.mjs';
     window.fb_writeRec = fb_writeRec;
 
-import { start } 
+import { start }
     from './GameThatWorks.mjs';
     window.start = start;
+
+import { draw }
+    from './GameThatWorks.mjs';
+    window.draw = draw;
