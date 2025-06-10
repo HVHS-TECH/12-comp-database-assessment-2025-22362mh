@@ -41,6 +41,7 @@ function fb_authenticate(){
         signInWithPopup(AUTH, PROVIDER).then((result) => {
             //Code for a successful authentication goes here
             console.log(result.user);
+            userInfo = result.user;
             userUid = result.user.uid;
         })
         .catch((error) => {
@@ -49,6 +50,7 @@ function fb_authenticate(){
         });
 }
 
+var userInfo;
 var userUid
 var FB_GAMEDB
 
@@ -65,11 +67,53 @@ function fb_initialise() {
 }
 
 function fb_writeRec(){
-    const whereWrite = "userData/userUid";
-    const dataToWrite = userUid;
-    var reference = ref(FB_GAMEDB, whereWrite);
-    set(reference, dataToWrite).then(() => {
-        console.log("Write rec successful");
+    const userName = document.getElementById("userName").value;
+    console.log(userName);
+
+    const userAge = document.getElementById("userAge").value;
+    console.log(userAge);
+
+    const userEmail = document.getElementById("userEmail").value;
+    console.log(userEmail);
+
+    const userNamePath = "userData/" + userUid + "/userName";
+    var reference = ref(FB_GAMEDB, userNamePath);
+    set(reference, userName).then(() => {
+        console.log("Username write rec successful");
+    }).catch((error) => {
+        console.log(error);
+    });
+
+    const userAgePath = "userData/" + userUid + "/userAge"
+    var reference = ref(FB_GAMEDB, userAgePath);
+    set(reference, userAge).then(() => {
+        console.log("User age write rec successful");
+    }).catch((error) => {
+        console.log(error);
+    });
+
+    const userEmailPath = "userData/" + userUid + "/userEmail"
+    var reference = ref(FB_GAMEDB, userEmailPath);
+    set(reference, userEmail).then(() => {
+        console.log("User email write rec successful");
+    }).catch((error) => {
+        console.log(error);
+    });
+
+    const userDisplayName = userInfo.displayName;
+    const userDisplayNamePath = "userData/" + userUid + "/userDisplayName"
+    var reference = ref(FB_GAMEDB, userDisplayNamePath);
+    set(reference, userDisplayName).then(() => {
+        console.log("User display name write rec successful");
+    }).catch((error) => {
+        console.log(error);
+    });
+
+    const userPhotoURL = userInfo.photoURL;
+    const userPhotoURLPath = "userData/" + userUid + "/userPhotoURL"
+    var reference = ref(FB_GAMEDB, userPhotoURLPath);
+    set(reference, userPhotoURL).then(() => {
+        console.log("User photo URL write rec successful");
     }).catch((error) => {
         console.log(error);
     });
