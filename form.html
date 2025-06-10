@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="12COMP P5.play">
+    <meta name="keywords" content="12COMP, P5.play">
+    <meta name="author" content="Mio Hoffman">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="main.mjs" type="module"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <title>Game form</title>
+</head>
+<body>
+    <h1>Game Form</h1>
+
+    <form>
+        <div class="form">
+        <label for="userName">Username:</label>
+        <input type="text" id="userName" name="userName" required/>
+    
+        <label for="userAge">Age:</label>
+        <input type="number" id="userAge" name="userAge" required/>
+
+        <label for="userEmail">Email:</label>
+        <input type="text" id="userEmail" name="userEmail" required/>
+        </div>
+        
+    </form>
+    <button onclick="fb_initialise(), fb_authenticate()">Login</button>
+    <button onclick="fb_writeRec()">Submit</button>
+
+    <button id="homeButton" onclick=location.href="index.html">HOME</button>
+
+</body>
+</html>

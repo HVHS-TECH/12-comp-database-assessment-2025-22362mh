@@ -15,8 +15,20 @@ button {
     font-size: 30px;
 }
 
-.buttons {
+.form{
+    font-family: verdana;
+    font-size: 20px;
+}
+
+.container {
     display: block;
+    margin: auto;
+    max-width: 500px;
+}
+
+#homeButton {
+    font-size: 50px;
+    margin: 100px;
 }
 
 h1 {
