@@ -175,8 +175,6 @@ function endGame(){
     textAlign(CENTER, CENTER);
     text("YOU DIED!", GAMEWIDTH/2, GAMEHEIGHT/2 - 40);
     text("Score: " + score, GAMEWIDTH/2, GAMEHEIGHT/2 + 10);
-
-    homeButton();
 }
 
 function difficulty(){

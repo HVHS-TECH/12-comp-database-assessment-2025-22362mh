@@ -3,16 +3,8 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.1/firebase
 import { getDatabase } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-database.js";
 
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
-
-import { signOut } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
-
 
 import { ref, set } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
-import { get, update }from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
-import { query, orderByChild, limitToFirst } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
- 
-import { onValue, remove } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
 
 const FB_GAMECONFIG = {
     apiKey: "AIzaSyCd2Z_1nM5CI6l6NVOrvlN7EDbKEaSTiv0",
