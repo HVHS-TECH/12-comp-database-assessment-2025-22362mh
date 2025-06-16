@@ -39,7 +39,7 @@ function fb_initialise() {
 
 function fb_writeRec(){
     const userScore = score;
-    const userScorePath = "gameScores/appleAttack/" + userUid + "/score";
+    const userScorePath = "gameScores/" + userUid + "/appleAttack/score";
 
     var reference = ref(FB_GAMEDB, userScorePath);
     set(reference, userScore).then(() => {

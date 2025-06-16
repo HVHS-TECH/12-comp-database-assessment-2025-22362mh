@@ -43,8 +43,8 @@ function fb_authenticate(){
 }
 
 var userInfo;
-var userUid
-var FB_GAMEDB
+var userUid;
+var FB_GAMEDB;
 
 function fb_initialise() {
     console.log('%c fb_initialise(): ', 
@@ -110,3 +110,5 @@ function fb_writeRec(){
         console.log(error);
     });
 }
+
+export {fb_initialise, fb_authenticate, fb_writeRec, userUid};
