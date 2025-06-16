@@ -35,6 +35,7 @@ function fb_authenticate(){
             console.log(result.user);
             userInfo = result.user;
             userUid = result.user.uid;
+            localStorage.setItem("userUid", userUid);
         })
         .catch((error) => {
             //Code for an authentication error goes here

@@ -175,6 +175,8 @@ function endGame(){
     textAlign(CENTER, CENTER);
     text("YOU DIED!", GAMEWIDTH/2, GAMEHEIGHT/2 - 40);
     text("Score: " + score, GAMEWIDTH/2, GAMEHEIGHT/2 + 10);
+
+    localStorage.setItem("userScore", score);
 }
 
 function difficulty(){
