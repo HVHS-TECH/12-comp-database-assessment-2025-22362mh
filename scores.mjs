@@ -7,8 +7,6 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstati
 
 import { ref, set } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
 
-import { userUid } from "./form.mjs";
-
 const FB_GAMECONFIG = {
     apiKey: "AIzaSyCd2Z_1nM5CI6l6NVOrvlN7EDbKEaSTiv0",
     authDomain: "comp-2025-mio-hoffman.firebaseapp.com",

@@ -110,5 +110,3 @@ function fb_writeRec(){
         console.log(error);
     });
 }
-
-export { fb_initialise, fb_authenticate, fb_writeRec, userUid };
