@@ -111,4 +111,4 @@ function fb_writeRec(){
     });
 }
 
-export { fb_initialise, fb_authenticate, fb_writeRec };
+export { fb_initialise, fb_authenticate, fb_writeRec, userUid };
