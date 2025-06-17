@@ -30,7 +30,7 @@ var movementSpeed = 3;
 
 var gameState = "start";
 
-var score = 0;
+var userScore = 0;
 var appleCount = 0;
 
 var ducks = 0;
@@ -156,9 +156,9 @@ function gameLoop(){
 
     groupLengthChecks(chicks, ducks, chickens);
 
-    //Displaying score and apple count
+    //Displaying userScore and apple count
     textSize(20);
-    text("Score: " + score, 10, 30);
+    text("Score: " + userScore, 10, 30);
 
     textSize(20);
     text("Apples: " + appleCount, 10, 50);
@@ -174,9 +174,9 @@ function endGame(){
     textSize(40);
     textAlign(CENTER, CENTER);
     text("YOU DIED!", GAMEWIDTH/2, GAMEHEIGHT/2 - 40);
-    text("Score: " + score, GAMEWIDTH/2, GAMEHEIGHT/2 + 10);
+    text("userScore: " + userScore, GAMEWIDTH/2, GAMEHEIGHT/2 + 10);
 
-    localStorage.setItem("userScore", score);
+    localStorage.setItem("userScore", userScore);
 }
 
 function difficulty(){
@@ -281,7 +281,7 @@ function chickMovement(){
 function chickDeath(player, _chick){
     if (appleCount >= 2){ //If player has at least two apples, they can defeat a chick
         _chick.remove();
-        score++
+        userScore++
         appleCount = appleCount - 2; //Minus the amount of apples it took to defeat the chick from appleCount
     }
     else { //If the player doesn't have two apples, the game ends
@@ -331,7 +331,7 @@ function duckMovement(){
 function duckDeath(player, _duck){
     if (appleCount >= 3){ //If player has at least 3 apples, they can defeat a duck
         _duck.remove();
-        score = score + 2; //Adds 2 points to the score instead of 1
+        userScore = userScore + 2; //Adds 2 points to the userScore instead of 1
         appleCount = appleCount - 3; //Minus the amount of apples it took to defeat the duck
     }
     else{ //If the player doesn't have three apples, the game ends
@@ -380,7 +380,7 @@ function chickenMovement(){
 function chickenDeath(player, _chicken){
     if (appleCount >= 4){ //If player has at least 4 apples, they can defeat a chicken
         _chicken.remove();
-        score = score + 3; //Adds 3 points to the score instead of 1
+        userScore = userScore + 3; //Adds 3 points to the userScore instead of 1
         appleCount = appleCount - 4; //Minus the amount of apples it took to defeat the duck
     }
     else{ //If the player doesn't have at least four apples, the game ends

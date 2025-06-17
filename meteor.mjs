@@ -29,7 +29,7 @@ const meteorImg = new Image();
 const earthImg = new Image();
 playerImg.src = 'assets/images/meteor.jpeg';
 meteorImg.src = 'assets/images/spacerock.jpeg';
-earthImg.src = 'assets/mages/earth.jpeg';
+earthImg.src = 'assets/images/earth.jpeg';
 
 // Start game
 startBtn.onclick = () => {
@@ -161,4 +161,6 @@ function endGame(won) {
   gameOverMessage.textContent = won ? '🌍 You reached Earth!' : '💥 Game Over!';
   finalScore.textContent = `Your Score: ${score}`;
   gameOverScreen.style.display = 'block';
+
+  localStorage.setItem("score", score);
 }

@@ -39,20 +39,19 @@ function fb_initialise() {
 
 fb_initialise();
 
-function appleAttackScoreRec(){
-    const uid = localStorage.getItem("userUid");
-    const userScore = localStorage.getItem("userScore");
+function meteorRushScoreRec(){
+    const userUid = localStorage.getItem("userUid");
+    const meteorRushScore = localStorage.getItem("score");
 
-    console.log(uid);
-    console.log(userScore);
+    console.log(meteorRushScore);
 
-    const userScorePath = "gameScores/" + uid + "/AppleAttack";
-    var reference = ref(FB_GAMEDB, userScorePath);
-    set(reference, userScore).then(() => {
-        console.log("Userscore write rec for Apple Attack successful");
+    const meteorRushScorePath = "gameScores/" + userUid + "/meteorRushScore";
+    var reference = ref(FB_GAMEDB, meteorRushScorePath);
+    set(reference, meteorRushScore).then(() => {
+        console.log("Userscore write rec for Meteor Rush successful");
     }).catch((error) => {
         console.log(error);
     });
 }
 
-appleAttackScoreRec();
+meteorRushScoreRec();

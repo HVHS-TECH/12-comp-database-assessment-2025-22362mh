@@ -40,11 +40,11 @@
     <h2 id="game-over-message" style="font-size: 48px; margin-bottom: 20px;"></h2>
     <p id="final-score" style="font-size: 32px; margin-bottom: 40px;"></p>
     <button onclick="goBack()" style="font-size: 24px; padding: 10px 20px; cursor: pointer;">Back to Portal</button>
-    <button onlick="leaderboard()" style="font-size: 24px; padding: 10px 20px; cursor: pointer;">Leaderboard</button>
+    <button onclick="location.href='meteorRushScores.html'" style="font-size: 24px; padding: 10px 20px; cursor: pointer;">Leaderboard</button>
   </div>
-
   <script src="meteor.mjs"></script>
   <script>
+
     function gameOver(won) {
       gameRunning = false; // Stop the game
 
@@ -67,10 +67,6 @@
 
       function goBack() {
       window.location.href = "index.html";
-    }
-
-    function leaderboard() {
-      window.location.href = "scores.mjs";
     }
   </script>
 </body>

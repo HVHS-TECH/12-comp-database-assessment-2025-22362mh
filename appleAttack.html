@@ -13,7 +13,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/addons/p5.sound.js" integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://p5play.org/v3/planck.min.js"></script>
   <script src="https://p5play.org/v3/p5play.js"></script>
-  <script src="scores.mjs" type="module"></script>
   <script src="appleAttack.mjs"></script>
   <link rel="stylesheet" href="appleAttack.css">
   
@@ -23,11 +22,12 @@
   BODY
 ****************************************************-->
 <body>
+
     <h1 id = "title">APPLE ATTACK</h1>
 
     <div class = "buttons">
     <button id = "homeButton" onclick="location.href='index.html'">Home</button>
-    <button id = "appleAttackLeaderboard" onclick="location.href='scores.html'">Leaderboard</button>
+    <button id = "appleAttackLeaderboard" onclick="location.href='appleAttackScores.html'">Leaderboard</button>
 
     <button id = "start" onclick = "runGame()">START</button>
     <button id = "instructions" onclick="location.href='appleAttackInstructions.html'">Instructions</button>
