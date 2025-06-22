@@ -2,10 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-analytics.js";
 import { getDatabase } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-database.js";
-
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-
-import { ref, set } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+import { ref, set, query, orderByChild, limitToFirst, get } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
 
 const FB_GAMECONFIG = {
     apiKey: "AIzaSyCd2Z_1nM5CI6l6NVOrvlN7EDbKEaSTiv0",
@@ -54,3 +51,23 @@ function appleAttackScoreRec(){
 
 appleAttackScoreRec();
 
+function aa_readSorted(){
+    const whereToReadFrom = "gameScores";
+    const sortkey = "appleAttackScore";
+    const numberToRead = 2;
+    const reference = query(ref(FB_GAMEDB, whereToReadFrom), orderByChild(sortkey), limitToFirst(numberToRead));
+    get(reference).then((snapshot) => {
+        var fb_data = snapshot.val();
+        console.log(fb_data);
+      if (fb_data != null) {
+            console.log("Sort read success");
+        } else {
+            console.log("Success: Record not found");
+        }
+    }).catch((error) => {
+        console.log(error);
+    });
+    console.log(whereToReadFrom);
+}
+
+aa_readSorted();
