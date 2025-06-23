@@ -3,7 +3,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebas
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-analytics.js";
 import { getDatabase } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-database.js";
 import { ref, set, query, orderByChild, limitToFirst, get } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
-
 const FB_GAMECONFIG = {
     apiKey: "AIzaSyCd2Z_1nM5CI6l6NVOrvlN7EDbKEaSTiv0",
     authDomain: "comp-2025-mio-hoffman.firebaseapp.com",
@@ -52,15 +51,25 @@ function appleAttackScoreRec(){
 appleAttackScoreRec();
 
 function aa_readSorted(){
+    const uid = localStorage.getItem("userUid");
     const whereToReadFrom = "gameScores";
     const sortkey = "appleAttackScore";
-    const numberToRead = 2;
+    const numberToRead = 5;
     const reference = query(ref(FB_GAMEDB, whereToReadFrom), orderByChild(sortkey), limitToFirst(numberToRead));
     get(reference).then((snapshot) => {
         var fb_data = snapshot.val();
         console.log(fb_data);
       if (fb_data != null) {
             console.log("Sort read success");
+            var finalScore = Object.values(fb_data);
+            console.log(finalScore);
+            console.log(finalScore[0].appleAttackScore);
+
+            var firstPlace = document.getElementById("first_place");
+            firstPlace.innerHTML = finalScore[0].appleAttackScore;
+
+            var secondPlace = document.getElementById("second_place");
+            secondPlace.innerHTML = finalScore[1].appleAttackScore;
         } else {
             console.log("Success: Record not found");
         }

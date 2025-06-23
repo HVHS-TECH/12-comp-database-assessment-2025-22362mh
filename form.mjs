@@ -6,6 +6,8 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstati
 
 import { ref, set } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
 
+var authorise = false;
+
 const FB_GAMECONFIG = {
     apiKey: "AIzaSyCd2Z_1nM5CI6l6NVOrvlN7EDbKEaSTiv0",
     authDomain: "comp-2025-mio-hoffman.firebaseapp.com",
@@ -36,6 +38,7 @@ function fb_authenticate(){
             userInfo = result.user;
             userUid = result.user.uid;
             localStorage.setItem("userUid", userUid);
+            authorise = true;
         })
         .catch((error) => {
             //Code for an authentication error goes here
@@ -60,6 +63,10 @@ function fb_initialise() {
 }
 
 function fb_writeRec(){
+    if (authorise === false){
+        alert("You must login first!");
+    }
+
     const userName = document.getElementById("userName").value;
     console.log(userName);
 
