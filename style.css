@@ -1,6 +1,6 @@
 body {
     font-family: verdana;
-    background-color: #ffbcb5;
+    background-color: #a7f2f6;
     color: #383d3b;
 
     text-align: center;
@@ -8,11 +8,14 @@ body {
 
 button {
     font-family: verdana;
-    background-color: #fbdce2;
+    background-color: #ffff;
     color: #383d3b;
     border-color: #383d3b;
 
     font-size: 30px;
+
+    border-style: solid;
+    border-width: 3px;
 }
 
 .form{
@@ -29,7 +32,7 @@ button {
 h1 {
     font-family: verdana;
     color: #383d3b;
-    background-color: #c83e4d;
+    background-color: #468ac6;
 
     font-size: 50px;
 
@@ -40,6 +43,10 @@ h1 {
     padding: 20px;
 
     border-bottom: solid;
-    border-bottom-color: #95a78d;
+    border-bottom-color: #3b4f98;
     border-bottom-width: 10px;
+}
+
+.gameButtons {
+    padding-top: 30px;
 }
