@@ -29,25 +29,12 @@
   <h2>Sign in, then choose a game!</h2>
 
   <div class="buttons">
-    <button id="formButton" onclick="userRegistration()">Sign in</button>
+    <button id="formButton" onclick=location.href="form.html">Sign in</button>
     <div class="gameButtons">
     <button id="appleAttackButton" onclick=location.href="appleAttack.html">Apple Attack</button>
     <button id="meteorButton" onclick=location.href="meteorRush.html">Meteor Rush</button>
     </div>
   </div>
-
-  <script>
-    function userRegistration(){
-      var authorise = localStorage.getItem("authorise");
-      if (authorise === true) {
-        alert("You have already logged in!");
-      }
-      else if (authorise === false){
-      location.href="form.html";
-    }
-    }
-    </script>
-
 </body>
 </html>
 <!--***************************************************
