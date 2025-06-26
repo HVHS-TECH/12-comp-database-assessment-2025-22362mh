@@ -81,7 +81,6 @@ function aa_readSorted(){
                 const entry = childSnap.child("appleAttack").val(); // {score, userName}
                 finalScore.push(entry);
             });
-            finalScore.reverse();
             //End of code written by Chatgpt
 
             var firstPlace = document.getElementById("first_place");

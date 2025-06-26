@@ -84,6 +84,14 @@ function fb_writeRec(){
         console.log(error);
     });
 
+    const userNamePath2 = "gameScores/" + userUid + "/meteorRush/userName";
+    var reference = ref(FB_GAMEDB, userNamePath2);
+    set(reference, userName).then(() => {
+        console.log("Username write rec successful");
+    }).catch((error) => {
+        console.log(error);
+    });
+
     const userAgePath = "userData/" + userUid + "/userAge"
     var reference = ref(FB_GAMEDB, userAgePath);
     set(reference, userAge).then(() => {
