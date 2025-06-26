@@ -6,6 +6,6 @@ import { fb_authenticate }
     from './form.mjs';
     window.fb_authenticate = fb_authenticate;
 
-import { fb_writeRec } 
+import { validation }
     from './form.mjs';
-    window.fb_writeRec = fb_writeRec;
+    window.validation = validation;

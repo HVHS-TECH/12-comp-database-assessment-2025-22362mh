@@ -62,11 +62,17 @@ function fb_initialise() {
                 const analytics = getAnalytics(app);
 }
 
-function fb_writeRec(){
+function validation(){
     if (authorise === false){
         alert("You must login first!");
     }
+    else {
+        fb_writeRec();
+    }
+    localStorage.setItem("authorise", authorise);
+}
 
+function fb_writeRec(){
     const userName = document.getElementById("userName").value;
     console.log(userName);
 
@@ -118,4 +124,4 @@ function fb_writeRec(){
     });
 }
 
-export {fb_initialise, fb_authenticate, fb_writeRec};
+export {fb_initialise, fb_authenticate, validation};
