@@ -112,6 +112,7 @@ function fb_writeRec(){
     var reference = ref(FB_GAMEDB, userPhotoURLPath);
     set(reference, userPhotoURL).then(() => {
         console.log("User photo URL write rec successful");
+        alert("Thank you! Sign in successful!");
     }).catch((error) => {
         console.log(error);
     });

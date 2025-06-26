@@ -1,5 +1,6 @@
 body {
     font-family: verdana;
+    font-size: 20px;
     background-color: #a7f2f6;
     color: #383d3b;
 
@@ -12,10 +13,11 @@ button {
     color: #383d3b;
     border-color: #383d3b;
 
-    font-size: 30px;
+    font-size: 40px;
 
     border-style: solid;
     border-width: 3px;
+    border-radius: 10px;
 }
 
 .form{
@@ -31,6 +33,7 @@ button {
 
 h1 {
     font-family: verdana;
+    font-size: 100px;
     color: #383d3b;
     background-color: #468ac6;
 
@@ -48,5 +51,13 @@ h1 {
 }
 
 .gameButtons {
-    padding-top: 30px;
+    padding-top: 90px;
+}
+
+#formButton {
+    margin-top: 30px;
+}
+
+.signInButtons {
+    padding-top: 50px;
 }
