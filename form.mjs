@@ -73,10 +73,10 @@ function fb_writeRec(){
     const userAge = document.getElementById("userAge").value;
     console.log(userAge);
 
-    const userEmail = document.getElementById("userEmail").value;
-    console.log(userEmail);
+    const userDisplayName = userInfo.displayName;
+    const userPhotoURL = userInfo.photoURL;
 
-    const userNamePath = "userData/" + userUid + "/userName";
+    const userNamePath = "gameScores/" + userUid + "/appleAttack/userName";
     var reference = ref(FB_GAMEDB, userNamePath);
     set(reference, userName).then(() => {
         console.log("Username write rec successful");
@@ -92,15 +92,6 @@ function fb_writeRec(){
         console.log(error);
     });
 
-    const userEmailPath = "userData/" + userUid + "/userEmail"
-    var reference = ref(FB_GAMEDB, userEmailPath);
-    set(reference, userEmail).then(() => {
-        console.log("User email write rec successful");
-    }).catch((error) => {
-        console.log(error);
-    });
-
-    const userDisplayName = userInfo.displayName;
     const userDisplayNamePath = "userData/" + userUid + "/userDisplayName"
     var reference = ref(FB_GAMEDB, userDisplayNamePath);
     set(reference, userDisplayName).then(() => {
@@ -109,7 +100,6 @@ function fb_writeRec(){
         console.log(error);
     });
 
-    const userPhotoURL = userInfo.photoURL;
     const userPhotoURLPath = "userData/" + userUid + "/userPhotoURL"
     var reference = ref(FB_GAMEDB, userPhotoURLPath);
     set(reference, userPhotoURL).then(() => {
@@ -119,4 +109,4 @@ function fb_writeRec(){
     });
 }
 
-export {fb_initialise, fb_authenticate, fb_writeRec, userUid};
+export {fb_initialise, fb_authenticate, fb_writeRec};
