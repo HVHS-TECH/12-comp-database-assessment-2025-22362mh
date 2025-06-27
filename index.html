@@ -23,7 +23,7 @@
 <!--***************************************************
   BODY
 ****************************************************-->
-<body>
+<body onload="userRegistration(), remove()">
   <h1>MIO'S GAMES</h1>
 
   <h2>Sign in, then choose a game!</h2>
@@ -35,6 +35,20 @@
     <button id="meteorButton" onclick=location.href="meteorRush.html">Meteor Rush</button>
     </div>
   </div>
+
+  <script>
+    function userRegistration(){
+      const authorise = localStorage.getItem("authorise");
+      if (authorise === "true"){
+      const formButton = document.getElementById("formButton");
+      formButton.remove();
+    }
+    }
+
+    function remove(){
+      localStorage.removeItem("authorise");
+    }
+  </script>
 
 </body>
 </html>
