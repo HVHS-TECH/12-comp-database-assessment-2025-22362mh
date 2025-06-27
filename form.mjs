@@ -7,6 +7,7 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstati
 import { ref, set } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
 
 var authorise = false;
+var validated = false;
 
 const FB_GAMECONFIG = {
     apiKey: "AIzaSyCd2Z_1nM5CI6l6NVOrvlN7EDbKEaSTiv0",
@@ -66,10 +67,16 @@ function validation(){
     if (authorise === false){
         alert("You must login first!");
     }
-    else {
+
+    if (authorise === true){
+        validated = true;
+
+        //use the remove function to remove the form button once the user authorises.
+    }
+
+    if (validated === true) {
         fb_writeRec();
     }
-    localStorage.setItem("authorise", authorise);
 }
 
 function fb_writeRec(){
