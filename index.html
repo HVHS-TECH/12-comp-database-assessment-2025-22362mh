@@ -23,7 +23,7 @@
 <!--***************************************************
   BODY
 ****************************************************-->
-<body onload="userRegistration(), remove()">
+<body onload="userRegistration(), reset()">
   <h1>MIO'S GAMES</h1>
 
   <h2>Sign in, then choose a game!</h2>
@@ -31,12 +31,18 @@
   <div class="buttons">
     <button id="formButton" onclick=location.href="form.html">Sign in</button>
     <div class="gameButtons">
-    <button id="appleAttackButton" onclick=location.href="appleAttack.html">Apple Attack</button>
-    <button id="meteorButton" onclick=location.href="meteorRush.html">Meteor Rush</button>
+    <button id="appleAttackButton" onclick="appleAttackLogin()">Apple Attack</button>
+    <button id="meteorButton" onclick="meteorRushLogin()">Meteor Rush</button>
     </div>
   </div>
 
   <script>
+    function reset(){
+      if (localStorage.getItem("authorise") === null) {
+        localStorage.setItem("authorise", "false");   // User's first time on website, not logged in
+      }
+    }
+
     function userRegistration(){
       const authorise = localStorage.getItem("authorise");
       if (authorise === "true"){
@@ -45,8 +51,24 @@
     }
     }
 
-    function remove(){
-      localStorage.removeItem("authorise");
+    function appleAttackLogin(){
+      const authorise = localStorage.getItem("authorise");
+      if (authorise === "false"){
+        alert("You must login to play the games!");
+      }
+      else if (authorise === "true"){
+        window.location.href = "appleAttack.html";
+      }
+    }
+
+    function meteorRushLogin(){
+      const authorise = localStorage.getItem("authorise");
+      if (authorise === "false"){
+        alert("You must login to play the games!");
+      }
+      else if (authorise === "true"){
+        window.location.href = "meteorRush.html";
+      }
     }
   </script>
 
