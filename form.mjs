@@ -93,6 +93,7 @@ function validation(){
     const userAge = document.getElementById("userAge").value;
     if (userAge < 5 || userAge > 95 || userAge === ""){
         alert("Please put in a age between 5-95");
+        return;
     }
     else {
         userAgeValid = true;

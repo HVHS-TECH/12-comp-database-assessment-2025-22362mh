@@ -39,7 +39,7 @@ fb_initialise();
 
 function meteorRushAttackScoreRec(){
     const uid = localStorage.getItem("userUid");
-    const meteorRushScore = localStorage.getItem("userScore");
+    const meteorRushScore = localStorage.getItem("score");
 
     const meteorRushScorePath = "gameScores/" + uid + "/meteorRush/score";
     var reference = ref(FB_GAMEDB, meteorRushScorePath);
@@ -83,6 +83,7 @@ function mr_readSorted(){
                 const entry = childSnap.child("meteorRush").val(); // {score, userName}
                 finalScore.push(entry);
             });
+            finalScore.reverse();
             //End of code written by Chatgpt
 
             var firstPlace = document.getElementById("first_place");

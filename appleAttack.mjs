@@ -176,7 +176,7 @@ function endGame(){
     text("YOU DIED!", GAMEWIDTH/2, GAMEHEIGHT/2 - 40);
     text("Score: " + userScore, GAMEWIDTH/2, GAMEHEIGHT/2 + 10);
 
-    localStorage.setItem("userScore", userScore);
+    localStorage.setItem("appleAttackUserScore", userScore);
 }
 
 function difficulty(){

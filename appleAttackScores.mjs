@@ -37,7 +37,7 @@ fb_initialise();
 
 function appleAttackScoreRec(){
     const uid = localStorage.getItem("userUid");
-    const appleAttackScore = localStorage.getItem("userScore");
+    const appleAttackScore = localStorage.getItem("appleAttackUserScore");
 
     const appleAttackScorePath = "gameScores/" + uid + "/appleAttack/score";
     var reference = ref(FB_GAMEDB, appleAttackScorePath);
@@ -81,6 +81,7 @@ function aa_readSorted(){
                 const entry = childSnap.child("appleAttack").val(); // {score, userName}
                 finalScore.push(entry);
             });
+            finalScore.reverse();
             //End of code written by Chatgpt
 
             var firstPlace = document.getElementById("first_place");
